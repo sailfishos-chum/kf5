@@ -1,4 +1,6 @@
-Name:    opt_kf5
+%global qt_version 5.15.8
+
+Name:    opt-kf5
 Version: 5.99.0
 Release: 1%{?dist}
 Summary: Filesystem and RPM macros for KDE Frameworks 5
@@ -27,7 +29,6 @@ install -Dpm644 macros.kf5 %{buildroot}%{_rpmconfigdir}/macros.d/macros.kf5
 sed -i \
   -e "s|@@KF5_VERSION@@|%{version}|g" \
   %{buildroot}%{_rpmconfigdir}/macros.d/macros.kf5
-
 
 %files rpm-macros
 %{_rpmconfigdir}/macros.d/macros.kf5

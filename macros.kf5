@@ -12,7 +12,7 @@
 %_opt_kf5_sysconfdir %{_opt_qt5_settingsdir}
 %_opt_kf5_mandir %{_opt_kf5_datadir}/man
 %_opt_kf5_buildtype release
-%_opt_kf5_qmldir %_opt_kf5_archdatadir/qml
+%_opt_kf5_qmldir %{_opt_kf5_archdatadir}/qml
 %_opt_kf5_version @@KF5_VERSION@@
 
 %_opt_cmake_kf5 \\\
@@ -26,7 +26,6 @@
     %{__cmake} \\\
     %{?__cmake_builddir:-S "%{_vpath_srcdir}"} \\\
     %{?__cmake_builddir:-B "%{__cmake_builddir}"} \\\
-    -DCMAKE_INSTALL_PREFIX:PATH=/opt/qt5 \\\
     -DCMAKE_C_FLAGS_RELEASE:STRING="-DNDEBUG" \\\
     -DCMAKE_CXX_FLAGS_RELEASE:STRING="-DNDEBUG" \\\
     -DCMAKE_Fortran_FLAGS_RELEASE:STRING="-DNDEBUG" \\\
@@ -40,10 +39,10 @@
     -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \\\
     -DECM_MKSPECS_INSTALL_DIR:PATH=%{_opt_kf5_archdatadir}/mkspecs/modules \\\
     -DKDE_INSTALL_BINDIR:PATH=%{_opt_kf5_bindir} \\\
-    -DKDE_INSTALL_INCLUDEDIR:PATH=%{_includedir} \\\
-    -DKDE_INSTALL_KCFGDIR:PATH=%{_datadir}/config.kcfg \\\
+    -DKDE_INSTALL_INCLUDEDIR:PATH=%{_opt_kf5_includedir} \\\
+    -DKDE_INSTALL_KCFGDIR:PATH=%{_opt_kf5_datadir}/config.kcfg \\\
     -DKDE_INSTALL_LIBDIR:PATH=%{_opt_kf5_libdir} \\\
-    -DKDE_INSTALL_LIBEXECDIR:PATH=%{_libexecdir} \\\
+    -DKDE_INSTALL_LIBEXECDIR:PATH=%{_opt_kf5_libexecdir} \\\
     -DKDE_INSTALL_METAINFODIR:PATH=%{_opt_kf5_metainfodir} \\\
     -DKDE_INSTALL_PLUGINDIR:PATH=%{_opt_qt5_plugindir} \\\
     -DKDE_INSTALL_QMLDIR:PATH=%{_opt_kf5_qmldir} \\\
