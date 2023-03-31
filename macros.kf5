@@ -37,6 +37,7 @@
     -DCMAKE_INSTALL_PREFIX:PATH=%{_opt_kf5_prefix} \\\
     -DCMAKE_USE_RELATIVE_PATHS:BOOL=ON \\\
     -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \\\
+    -DCMAKE_MODULE_PATH:PATH=%{_opt_qt5_prefix}/share/ECM/ \\\
     -DECM_MKSPECS_INSTALL_DIR:PATH=%{_opt_kf5_archdatadir}/mkspecs/modules \\\
     -DKDE_INSTALL_BINDIR:PATH=%{_opt_kf5_bindir} \\\
     -DKDE_INSTALL_INCLUDEDIR:PATH=%{_opt_kf5_includedir} \\\
