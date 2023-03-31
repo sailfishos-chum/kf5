@@ -22,6 +22,8 @@ BuildArch: noarch
 %description rpm-macros
 RPM macros for building KDE Frameworks 5 packages.
 
+%prep
+%setup -q
 
 %install
 install -Dpm644 macros.kf5 %{buildroot}%{_rpmconfigdir}/macros.d/macros.kf5
