@@ -15,6 +15,11 @@
 %_opt_kf5_qmldir %{_opt_kf5_archdatadir}/qml
 %_opt_kf5_version @@KF5_VERSION@@
 
+%opt_kf5_default_filter %{expand: \
+%global __provides_exclude_from %{?__provides_exclude_from:%__provides_exclude_from|}^%{_opt_qt5_libdir}
+%global __requires_exclude %{?__requires_exclude:%__requires_exclude|}^libQt5.*$|^libKF5.*$
+}
+
 %_opt_cmake_kf5 \\\
   %undefine __cmake_in_source_build \
   QTDIR="%{_opt_qt5_prefix}" ; export QTDIR ; \
