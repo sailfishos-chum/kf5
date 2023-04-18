@@ -6,7 +6,7 @@
 %_opt_kf5_includedir %{_opt_qt5_prefix}/include/KF5
 %_opt_kf5_libdir %{_opt_qt5_prefix}/%{_lib}
 %_opt_kf5_libexecdir %{_opt_qt5_archdatadir}/libexec
-%_opt_kf5_metainfodir %_metainfodir
+%_opt_kf5_metainfodir %{_datadir}/metainfo
 %_opt_kf5_qtplugindir %{_opt_qt5_archdatadir}/plugins
 %_opt_kf5_plugindir %{_opt_qt5_archdatadir}/plugins/KF5
 %_opt_kf5_sysconfdir %{_opt_qt5_settingsdir}
