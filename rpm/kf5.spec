@@ -1,7 +1,7 @@
 %global qt_version 5.15.8
 
 Name:    opt-kf5
-Version: 5.105.0
+Version: 5.106.0
 Release: 1%{?dist}
 Summary: Filesystem and RPM macros for KDE Frameworks 5
 License: BSD
