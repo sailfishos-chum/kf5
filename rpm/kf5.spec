@@ -27,6 +27,11 @@ RPM macros for building KDE Frameworks 5 packages.
 
 %install
 install -Dpm644 macros.kf5 %{buildroot}%{_rpmconfigdir}/macros.d/macros.kf5
+# add compat macros:
+%if 0%{?sailfishos_version} < 40600
+cat macros.kf5.cmake-compat >> %{buildroot}%{_rpmconfigdir}/macros.d/macros.kf5
+%endif
+
 sed -i \
   -e "s|@@KF5_VERSION@@|%{version}|g" \
   %{buildroot}%{_rpmconfigdir}/macros.d/macros.kf5
